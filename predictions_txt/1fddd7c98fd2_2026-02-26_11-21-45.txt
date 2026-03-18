@@ -1,0 +1,7 @@
+Image Name: 1fddd7c98fd2.png
+Date & Time: 2026-02-26_11-21-45
+Disease Prediction: DR
+Disease Probability: 1.0000
+Stage Prediction: Severe
+Stage Probability: 0.9995
+Message: Detected Diabetic Retinopathy

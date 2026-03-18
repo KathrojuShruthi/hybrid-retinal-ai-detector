@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Diabetic Retinopathy Detection System</title>
+
+<style>
+
+body{
+margin:0;
+font-family: Arial, Helvetica, sans-serif;
+background: linear-gradient(120deg,#3a7bd5,#3a6073);
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+color:#333;
+}
+
+/* MAIN CARD */
+
+.container{
+width:520px;
+background:white;
+padding:40px;
+border-radius:12px;
+box-shadow:0 8px 25px rgba(0,0,0,0.25);
+text-align:center;
+}
+
+/* TITLE */
+
+.title{
+font-size:32px;
+font-weight:bold;
+color:#1b4f72;
+margin-bottom:15px;
+}
+
+/* DESCRIPTION
+
+.description{
+font-size:16px;
+line-height:1.6;
+color:#555;
+margin-bottom:30px;
+} */
+
+/* INPUTS */
+
+input{
+width:92%;
+padding:12px;
+margin:10px 0;
+border-radius:6px;
+border:1px solid #ccc;
+font-size:16px;
+}
+
+/* BUTTON */
+
+button{
+width:96%;
+padding:12px;
+margin-top:10px;
+background:#2e86de;
+color:white;
+border:none;
+border-radius:6px;
+font-size:18px;
+cursor:pointer;
+}
+
+button:hover{
+background:#1b4f9c;
+}
+
+/* ERROR */
+
+.error{
+color:red;
+margin-top:10px;
+font-size:14px;
+}
+
+.footer{
+margin-top:20px;
+font-size:13px;
+color:#777;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="title">
+Diabetic Retinopathy Detection System
+</div>
+
+<form method="POST">
+
+<input type="text" name="username" placeholder="Enter Username" required>
+
+<input type="password" name="password" placeholder="Enter Password" required>
+
+<button type="submit">Login</button>
+
+</form>
+
+{% if error %}
+<div class="error">{{error}}</div>
+{% endif %}
+
+<div class="footer">
+AI Powered Medical Image Analysis System
+</div>
+
+</div>
+
+</body>
+</html>

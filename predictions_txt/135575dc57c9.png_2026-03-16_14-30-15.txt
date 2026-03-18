@@ -1,0 +1,3 @@
+Disease: DR
+Probability: 0.999997615814209
+DR Stage: Proliferative

@@ -1,0 +1,3 @@
+Disease: Glaucoma
+Probability: 0.9985283613204956
+DR Stage: Not Applicable

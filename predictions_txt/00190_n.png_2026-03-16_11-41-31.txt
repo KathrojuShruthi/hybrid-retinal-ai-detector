@@ -1,0 +1,3 @@
+Disease: Normal
+Probability: 0.9911150932312012
+DR Stage: Not Applicable

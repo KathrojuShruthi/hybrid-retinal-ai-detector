@@ -1,0 +1,3 @@
+Disease: DR
+Probability: 0.9999184608459473
+DR Stage: Moderate
