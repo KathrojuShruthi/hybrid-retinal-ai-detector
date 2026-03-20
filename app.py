@@ -78,7 +78,6 @@ class UnifiedHybridModel(nn.Module):
         stage_out = self.stage_head(fused)
         return main_out, stage_out
 
-
 # ================= DOWNLOAD MODEL =================
 
 MODEL_PATH = "unified_hybrid_model.pth"
@@ -87,7 +86,6 @@ if not os.path.exists(MODEL_PATH):
     print("Downloading model...")
     url = "https://drive.google.com/uc?id=1-KxXQiO6rvraZFiapa_opvuDy7la25l8"
     gdown.download(url, MODEL_PATH, quiet=False)
-
 
 # ================= LOAD MODEL =================
 
@@ -122,7 +120,6 @@ def login():
 
     return render_template("login.html")
 
-
 # ================= INFO PAGE =================
 
 @app.route("/info")
@@ -132,7 +129,6 @@ def info():
         return redirect(url_for("login"))
 
     return render_template("info.html")
-
 
 # ================= PREDICTION =================
 
@@ -194,13 +190,11 @@ def predict():
 
     return render_template("predict.html", result=result, img_filename=img_filename)
 
-
 # ================= DISPLAY IMAGE =================
 
 @app.route("/uploads/<filename>")
 def uploaded_file(filename):
     return send_from_directory(app.config["UPLOAD_FOLDER"], filename)
-
 
 # ================= LOGOUT =================
 
@@ -208,7 +202,6 @@ def uploaded_file(filename):
 def logout():
     session.pop("user",None)
     return redirect(url_for("login"))
-
 
 # ================= RUN =================
 
