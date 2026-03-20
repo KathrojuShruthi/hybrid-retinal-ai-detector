@@ -1,0 +1,7 @@
+Image Name: 00245_g.jpg
+Date & Time: 2026-02-26_14-52-26
+Disease Prediction: Glaucoma
+Disease Probability: 0.9955
+Stage Prediction: Not a DR
+Stage Probability: 0.0000
+Message: Detected Glaucoma — Not a Diabetic Retinopathy case.

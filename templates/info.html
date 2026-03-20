@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Diabetic Retinopathy Information</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(150deg,#1f8ef1,#6dd5fa,#ffffff,#1f8ef1);
+background-attachment:fixed;
+color:#333;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:sticky;
+top:0;
+background:linear-gradient(to top,#0052D4,#4364F7,#6FB1FC);
+color:white;
+padding:18px;
+text-align:center;
+font-size:28px;
+font-weight:bold;
+box-shadow:0 4px 10px rgba(0,0,0,0.2);
+z-index:1000;
+}
+
+/* SECTION */
+
+.section{
+padding:60px 12%;
+}
+
+/* CARD */
+
+.card{
+background:#ffffff;
+padding:30px;
+border-radius:14px;
+box-shadow:0 8px 25px rgba(0,0,0,0.2);
+margin-bottom:40px;
+transition:transform 0.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.card h2{
+color:#0b5ed7;
+margin-bottom:15px;
+}
+
+.card p{
+font-size:18px;
+line-height:1.8;
+text-align:justify;
+}
+
+/* IMAGE */
+
+.image{
+text-align:center;
+margin-top:25px;
+}
+
+.image img{
+width:420px;
+border-radius:10px;
+box-shadow:0 6px 18px rgba(0,0,0,0.25);
+}
+
+/* LIST */
+
+ul{
+padding-left:20px;
+}
+
+li{
+margin-bottom:10px;
+font-size:18px;
+line-height:1.6;
+}
+
+/* GRID FOR BOXES */
+
+.grid-2{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+margin-top:20px;
+}
+
+/* SMALL BOX */
+
+.info-box{
+background:#ffffff;
+padding:25px;
+border-radius:12px;
+box-shadow:0 6px 18px rgba(0,0,0,0.2);
+transition:transform 0.3s;
+}
+
+.info-box:hover{
+transform:translateY(-6px);
+}
+
+.info-box h3{
+color:#0b5ed7;
+margin-bottom:10px;
+}
+
+/* STAGE CARDS */
+
+.stage-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:30px;
+margin-top:20px;
+}
+
+.stage-card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 6px 20px rgba(0,0,0,0.25);
+text-align:center;
+transition:transform 0.3s;
+}
+
+.stage-card:hover{
+transform:scale(1.05);
+}
+
+.stage-card img{
+width:100%;
+border-radius:8px;
+margin-top:10px;
+}
+
+/* BUTTON */
+
+.button-area{
+text-align:center;
+margin-top:40px;
+}
+
+button{
+padding:16px 40px;
+font-size:20px;
+border:none;
+border-radius:10px;
+background:#0b5ed7;
+color:white;
+cursor:pointer;
+box-shadow:0 6px 18px rgba(0,0,0,0.3);
+}
+
+button:hover{
+background:#084298;
+}
+#m1,#m2,#m3,#m4{
+    height:150px;
+    width:250px;
+}
+#m5,#m6{
+    height:270px;
+    width:350px;
+    margin-top:-350px;
+    margin-left:200px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+Diabetic Retinopathy
+</div>
+
+<div class="section">
+
+<!-- ABOUT DISEASE -->
+
+<div class="card">
+
+<h2>About Diabetic Retinopathy</h2>
+
+<p>
+Diabetic Retinopathy is an eye disease that occurs when diabetes damages the blood vessels in the retina.
+High blood sugar levels weaken these blood vessels, causing them to swell, leak, or close completely.
+In advanced stages abnormal blood vessels may grow in the retina leading to serious vision problems.
+</p>
+
+<p>
+Early detection and treatment are essential to prevent permanent vision loss.
+Regular eye examinations and proper blood sugar control significantly reduce the risk of diabetic retinopathy.
+</p>
+
+<div class="image">
+<img src="../static/images/retinal 5.jpg">
+</div>
+
+</div>
+
+<!-- BLOOD SUGAR LEVELS -->
+
+<div class="card">
+
+<h2>Blood Sugar Levels and Risk</h2>
+
+<p>
+Maintaining healthy blood sugar levels is essential to prevent complications such as diabetic retinopathy.
+Long-term uncontrolled glucose levels damage retinal blood vessels and affect vision.
+</p>
+
+<div class="grid-2">
+
+<div class="info-box">
+
+<h3>Normal Levels</h3>
+
+<ul>
+<li>Fasting: <b>60 – 99 mg/dL</b></li>
+<li>After meal: <b>Below 140 mg/dL</b></li>
+<li>Indicates healthy glucose regulation.</li>
+</ul>
+
+</div>
+
+<div class="info-box">
+
+<h3>Prediabetes</h3>
+
+<ul>
+<li>Fasting: <b>100 – 125 mg/dL</b></li>
+<li>After meal: <b>140 – 199 mg/dL</b></li>
+<li>Higher risk of developing diabetes.</li>
+</ul>
+
+</div>
+
+<div class="info-box">
+
+<h3>Diabetes Level</h3>
+
+<ul>
+<li>Fasting: <b>126 mg/dL+</b></li>
+<li>After meal: <b>200 mg/dL+</b></li>
+<li>Random sugar: <b>200 mg/dL+</b></li>
+</ul>
+
+</div>
+
+<div class="info-box">
+
+<h3>Recommended for Diabetics</h3>
+
+<ul>
+<li>Before meal: <b>80 – 130 mg/dL</b></li>
+<li>After meal: <b>Below 180 mg/dL</b></li>
+<li>Helps prevent eye complications.</li>
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- SYMPTOMS -->
+
+<div class="card">
+
+<h2>Symptoms</h2>
+
+<ul>
+<li>Blurred vision</li>
+<li>Dark spots or floaters</li>
+<li>Difficulty seeing at night</li>
+<li>Sudden vision loss</li>
+<li>Difficulty focusing</li>
+</ul>
+
+<div class="image">
+<img id="m5" src="..\static\images\retinal img1.avif">
+</div>
+
+</div>
+
+<!-- DR STAGES -->
+
+<div class="card">
+
+<h2>Stages of Diabetic Retinopathy</h2>
+
+<div class="stage-grid">
+
+<div class="stage-card">
+<h3>Mild DR</h3>
+<img id="m1" src="../static/images/Mild.png">
+<p>Small areas of balloon-like swelling occur in the retina blood vessels.</p>
+</div>
+
+<div class="stage-card">
+<h3>Moderate DR</h3>
+<img id="m2" src="../static/images/Moderate.png">
+<p>Blood vessels become blocked and damage increases.</p>
+</div>
+
+<div class="stage-card">
+<h3>Severe DR</h3>
+<img id="m3" src="../static/images/severe.png">
+<p>More blood vessels become blocked leading to oxygen shortage in the retina.</p>
+</div>
+
+<div class="stage-card">
+<h3>Proliferative DR</h3>
+<img id="m4" src="../static/images/proliferative.png">
+<p>New abnormal blood vessels grow and may cause severe vision loss.</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- PRECAUTIONS -->
+
+<div class="card">
+
+<h2>Precautions After Diagnosis</h2>
+
+<ul>
+<li>Monitor blood sugar regularly</li>
+<li>Follow prescribed medications</li>
+<li>Regular eye examinations</li>
+<li>Control blood pressure and cholesterol</li>
+<li>Avoid smoking and alcohol</li>
+</ul>
+
+</div>
+
+<!-- PREVENTION -->
+
+<div class="card">
+
+<h2>Prevention Tips</h2>
+
+<ul>
+<li>Maintain healthy blood sugar</li>
+<li>Exercise regularly</li>
+<li>Eat balanced diet</li>
+<li>Maintain healthy body weight</li>
+<li>Regular eye screening</li>
+</ul>
+
+
+<div class="image">
+<img id="m6" src="..\static\images\retinal 3.jpg">
+</div>
+</div>
+
+<div class="button-area">
+
+<a href="{{ url_for('predict') }}">
+<button>Go to Prediction Page</button>
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

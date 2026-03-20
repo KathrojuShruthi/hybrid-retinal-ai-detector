@@ -1,0 +1,7 @@
+Image Name: IMG_54744.png
+Date & Time: 2026-02-26_10-51-12
+Disease Prediction: DR
+Disease Probability: 0.9998
+Stage Prediction: Proliferative
+Stage Probability: 0.9649
+Message: Detected Diabetic Retinopathy

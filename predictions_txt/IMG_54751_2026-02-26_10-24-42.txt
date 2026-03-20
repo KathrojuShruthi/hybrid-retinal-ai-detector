@@ -1,0 +1,7 @@
+Image Name: IMG_54751.jpg
+Date & Time: 2026-02-26_10-24-42
+Disease Prediction: Glaucoma
+Disease Probability: 0.9949
+Stage Prediction: Not a DR
+Stage Probability: 0.0000
+Message: Detected Glaucoma — Not a Diabetic Retinopathy case.
