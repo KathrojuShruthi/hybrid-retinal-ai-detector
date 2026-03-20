@@ -10,6 +10,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 import gdown
 
+# 🔥 IMPORTANT: prevent unnecessary cache downloads
+os.environ["TORCH_HOME"] = "/tmp"
+
 app = Flask(__name__)
 app.secret_key = "retinal_secret_key"
 
@@ -21,7 +24,7 @@ os.makedirs(RESULTS_FOLDER, exist_ok=True)
 
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
-device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+device = torch.device("cpu")  # 🔥 Force CPU (important for Render free)
 image_size = 224
 
 main_classes = ["Normal", "Glaucoma", "DR"]
@@ -33,8 +36,8 @@ class UnifiedHybridModel(nn.Module):
     def __init__(self, num_main_classes=3, num_stage_classes=4, fusion_dim=512):
         super().__init__()
 
-        # ❌ Removed pretrained weights (IMPORTANT)
-        self.resnet = models.resnet50(weights=None)
+        # 🔥 No pretrained weights
+        self.resnet = models.resnet50()
         self.resnet.fc = nn.Identity()
         resnet_dim = 2048
 
@@ -213,4 +216,5 @@ def logout():
 # ================= RUN =================
 
 if __name__=="__main__":
-    app.run()
+    port = int(os.environ.get("PORT", 10000))
+    app.run(host="0.0.0.0", port=port)
