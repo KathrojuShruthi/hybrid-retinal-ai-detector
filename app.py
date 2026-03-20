@@ -33,7 +33,8 @@ class UnifiedHybridModel(nn.Module):
     def __init__(self, num_main_classes=3, num_stage_classes=4, fusion_dim=512):
         super().__init__()
 
-        self.resnet = models.resnet50(weights=models.ResNet50_Weights.DEFAULT)
+        # ❌ Removed pretrained weights (IMPORTANT)
+        self.resnet = models.resnet50(weights=None)
         self.resnet.fc = nn.Identity()
         resnet_dim = 2048
 
@@ -78,6 +79,7 @@ class UnifiedHybridModel(nn.Module):
         stage_out = self.stage_head(fused)
         return main_out, stage_out
 
+
 # ================= DOWNLOAD MODEL =================
 
 MODEL_PATH = "unified_hybrid_model.pth"
@@ -87,12 +89,6 @@ if not os.path.exists(MODEL_PATH):
     url = "https://drive.google.com/uc?id=1-KxXQiO6rvraZFiapa_opvuDy7la25l8"
     gdown.download(url, MODEL_PATH, quiet=False)
 
-# ================= LOAD MODEL =================
-
-model = UnifiedHybridModel()
-model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
-model.to(device)
-model.eval()
 
 # ================= IMAGE TRANSFORM =================
 
@@ -101,6 +97,7 @@ transform = transforms.Compose([
     transforms.ToTensor(),
     transforms.Normalize([0.485,0.456,0.406],[0.229,0.224,0.225])
 ])
+
 
 # ================= LOGIN =================
 
@@ -120,7 +117,8 @@ def login():
 
     return render_template("login.html")
 
-# ================= INFO PAGE =================
+
+# ================= INFO =================
 
 @app.route("/info")
 def info():
@@ -130,7 +128,8 @@ def info():
 
     return render_template("info.html")
 
-# ================= PREDICTION =================
+
+# ================= PREDICT =================
 
 @app.route("/predict", methods=["GET","POST"])
 def predict():
@@ -152,6 +151,12 @@ def predict():
         image = Image.open(img_path).convert("RGB")
         image_tensor = transform(image).unsqueeze(0).to(device)
 
+        # 🔥 LOAD MODEL ONLY WHEN NEEDED
+        model = UnifiedHybridModel()
+        model.load_state_dict(torch.load(MODEL_PATH, map_location=device))
+        model.to(device)
+        model.eval()
+
         with torch.no_grad():
 
             main_out, stage_out = model(image_tensor)
@@ -171,7 +176,6 @@ def predict():
                 message="Normal Eye"
 
         now=datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-
         txt_name=f"{filename}_{now}.txt"
 
         with open(os.path.join(RESULTS_FOLDER,txt_name),"w") as f:
@@ -190,11 +194,13 @@ def predict():
 
     return render_template("predict.html", result=result, img_filename=img_filename)
 
-# ================= DISPLAY IMAGE =================
+
+# ================= SHOW IMAGE =================
 
 @app.route("/uploads/<filename>")
 def uploaded_file(filename):
     return send_from_directory(app.config["UPLOAD_FOLDER"], filename)
+
 
 # ================= LOGOUT =================
 
@@ -202,6 +208,7 @@ def uploaded_file(filename):
 def logout():
     session.pop("user",None)
     return redirect(url_for("login"))
+
 
 # ================= RUN =================
 
